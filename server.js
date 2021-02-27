@@ -8,11 +8,6 @@ var bot = new dbd.Bot({
 bot.onMessage();
 
 bot.command({
-  name: "ping",
-  code: `Pong! \`$ping\``
-});
-
-bot.command({
   name: "rps",
   code: `$argsCheck[1;❌ You must select either Rock, either Paper or either Scissors.]
 $onlyIf[$checkCondition[$toLowercase[$message[1]]==rock]-$checkCondition[$toLowercase[$message[1]]==paper]-$checkCondition[$toLowercase[$message[1]]==scissors]!=false-false-false;❌ You must select either Rock, either Paper or either Scissors.]
@@ -1066,6 +1061,7 @@ bot.command({
 $description[Successfully added that Prefix]
 $footer[Newest Prefix is $message]
 $setServerVar[prefix;$message]
+$onlyPerms[Admin;You can't use this command]
 `
 });
 
@@ -1074,5 +1070,20 @@ bot.command({
   code: `$title[Reset Prefix]
 $description[Successfully reseted and restored the default prefix]
 $setServerVar[prefix;s.]
+$onlyPerms[Admin;You can't use this command]
+`
+});
+
+bot.command({
+  name: "ping",
+  code: `$title[Ping!]
+$description[⚡️| **Websocket ping:** $pingms.
+
+⌛️| **Message ping:** $botpingms.
+
+⚙️| **CPU and RAM usage:** **CPU:** $cpu% **RAM:** $ramMB.
+
+🕔| **Uptime:** $uptime.]
+$color[RANDOM]
 `
 });
