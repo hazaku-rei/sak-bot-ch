@@ -1061,7 +1061,7 @@ bot.command({
 $description[Successfully added that Prefix]
 $footer[Newest Prefix is $message]
 $setServerVar[prefix;$message]
-$onlyPerms[Admin;You can't use this command]
+$onlyPerms[admin;You can't use this command]
 `
 });
 
@@ -1070,7 +1070,7 @@ bot.command({
   code: `$title[Reset Prefix]
 $description[Successfully reseted and restored the default prefix]
 $setServerVar[prefix;s.]
-$onlyPerms[Admin;You can't use this command]
+$onlyPerms[admin;You can't use this command]
 `
 });
 
