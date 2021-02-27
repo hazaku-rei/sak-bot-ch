@@ -871,6 +871,7 @@ bot.command({
   code: `
  $color[RED]
  $thumbnail[$userAvatar[$clientID]]
+ $endIf
  $if[$message[1]==]
  $author[$userTag[$clientID];$userAvatar[$clientID]]
  $addField[GUIDE;to See Commandlist or command type \`$getServerVar[prefix]help <Commandlist> or $getServerVar[prefix]help <Command>\`
