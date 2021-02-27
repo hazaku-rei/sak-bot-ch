@@ -867,8 +867,8 @@ $color[RANDOM]`
 });
 
 bot.command({
- name: "help",
- code: `
+  name: "help",
+  code: `
  $color[RED]
  $thumbnail[$userAvatar[$clientID]]
  $if[$message[1]==]
@@ -1062,16 +1062,18 @@ $if[$message[1]==pat]
 });
 
 bot.command({
-name: "setprefix",
-code:`$title[Prefix]
+  name: "setprefix",
+  code: `$title[Prefix]
 $description[Successfully added that Prefix]
-$footer[Newest Prefix is `$message`]
+$footer[Newest Prefix is $message]
 $setServerVar[prefix;$message]
 `
-})
+});
 
 bot.command({
-name: "resetprefix"
-code: `$title[Reset Prefix]
+  name: "resetprefix",
+  code: `$title[Reset Prefix]
 $description[Successfully reseted and restored the default prefix]
 $setServerVar[prefix;s.]
+`
+});
