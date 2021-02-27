@@ -871,7 +871,6 @@ bot.command({
   code: `
  $color[RED]
  $thumbnail[$userAvatar[$clientID]]
- $endIf
  $if[$message[1]==]
  $author[$userTag[$clientID];$userAvatar[$clientID]]
  $addField[GUIDE;to See Commandlist or command type \`$getServerVar[prefix]help <Commandlist> or $getServerVar[prefix]help <Command>\`
@@ -1058,8 +1057,7 @@ $if[$message[1]==wave]
  $endIf
 $if[$message[1]==pat]
  $addField[pat;\`Want to pat someone? Usage: $getServerVar[prefix]pat <user>\`]
- $endIf
-`
+ $endIf`
 });
 
 bot.command({
