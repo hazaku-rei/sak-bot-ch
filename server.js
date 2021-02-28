@@ -417,6 +417,7 @@ $addField[Warned User;<@$mentioned[1]> with ID: $mentioned[1]]
 $addField[Warned By;<@$authorID> with ID: $authorID]
 
 $addField[Reason;$noMentionMessage]
+$footerIcon[$userAvatar[$mentioned]]
 $footer[Warned User: $username[$mentioned[1]]#$discriminator[$mentioned[1]] | Case #$sum[$getServerVar[case];1]]`
 });
 
