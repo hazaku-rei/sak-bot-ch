@@ -398,7 +398,7 @@ bot.command({
 
 $title[Warn Check]
 
-$description[This user has $getUserVar[warns;$mentioned[1]] warns]`
+$description[<@$mentioned[1]> user has $getUserVar[warns;$mentioned[1]] warns]`
 });
 
 bot.command({
@@ -546,7 +546,7 @@ $author[$username;$authorAvatar]
 bot.command({
   name: "leaderboard",
   code: `$title[Balance Leaderboard]
-  $userLeaderboard[money;desc]
+  $description[$userLeaderboard[money;desc]]
 $color[ff00ff]
 `
 });
@@ -689,11 +689,10 @@ bot.command({
 });
 
 bot.command({
-  name: "$alwaysExecute",
+  name: "hell",
   nonPrefixed: true,
   code: `$deletecommand
- $onlyIfMessageContains[$message;Hell;]
- $onlyIf[$getServerVar[bw]==True;]
+  $onlyIf[$getServerVar[bw]==True;]
  <@$authorID> Use Of Bad Words or Swearing is Not Allowed in this server  | Reason: **AutoMod Enable**
  `
 });
@@ -1050,7 +1049,9 @@ $description[⚡️| **Websocket ping:** $pingms.
 
 ⌛️| **Message ping:** $botpingms.
 
-⚙️| **CPU and RAM usage:** **CPU:** $cpu% **RAM:** $ramMB.
+⚙️| **CPU and RAM usage:** 
+**CPU:** $cpu% 
+**RAM:** $ramMB.
 
 🕔| **Uptime:** $uptime.]
 $color[RANDOM]
@@ -1059,15 +1060,15 @@ $color[RANDOM]
 
 bot.command({
   name: "warn",
-  code: `$setServerVar[warns;$sum[$getServerVar[warns;$mentioned[1]];1];$mentioned[1]]
+  code: `$setServerVar[warns;$sum[$mentioned[1];$getServerVar[warns;$mentioned[1]];1]]
 $onlyPerms[manageserver;admin;You can Use this command]
 $title[⚠️ - Warning]
 $description[
- **Warned User**
- <@$mentioned[1]>
- **Warned by**
- <@$authorID>
- **Warn Reason**
- $noMentionMessage]
+**Warned User**
+<@$mentioned[1]>
+**Warned by**
+<@$authorID>
+**Warn Reason**
+$noMentionMessage]
 $footer[Warned to <@$mentioned[1]> by <@$authorID>]`
 });
