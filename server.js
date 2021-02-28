@@ -396,30 +396,7 @@ bot.command({
   name: "warn",
   code: `$setUserVar[warns;$sum[$getUserVar[warns;$mentioned[1]];1];$mentioned[1]]
 
-$onlyPerms[manageroles;manageserver;managemessages;kick;ban;admin;❌ - No Permissons to run this command] 
-
-$deletecommand
-
-$botTyping
-
-$color[FFFFFF] 
-
-$onlyPerms[manageroles;manageserver;managemessages;kick;ban;admin;❌ - No Permissons to run this command] 
-
-$author[$username#$discriminator[$authorID]] 
-
-$authorIcon[$authorAvatar] 
-
-$title[⚠️ - Warning]
-
-$addField[Warned User;<@$mentioned[1]> with ID: $mentioned[1]]
-
-$addField[Warned By;<@$authorID> with ID: $authorID]
-
-$addField[Reason;$noMentionMessage]
-$footer[Warned User: $username[$mentioned[1]]#$discriminator[$mentioned[1]] | Case #$sum[$getServerVar[case];1]]`
-});
-
+$onlyPerms[manageroles;manageserver;managemessages;kick;ban;admin;❌ - No Permissons to run this comm
 bot.command({
   name: "checkwarn",
   code: `$color[#FF0000]
