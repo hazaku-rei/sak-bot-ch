@@ -393,11 +393,6 @@ $addTimestamp`
 });
 
 bot.command({
-  name: "warn",
-  code: `$setUserVar[warns;$sum[$getUserVar[warns;$mentioned[1]];1];$mentioned[1]]
-
-$onlyPerms[manageroles;manageserver;managemessages;kick;ban;admin;❌ - No Permissons to run this comm
-bot.command({
   name: "checkwarn",
   code: `$color[#FF0000]
 
@@ -1060,4 +1055,19 @@ $description[⚡️| **Websocket ping:** $pingms.
 🕔| **Uptime:** $uptime.]
 $color[RANDOM]
 `
+});
+
+bot.command({
+  name: "warn",
+  code: `$setServerVar[warns;$sum[$getServerVar[warns;$mentioned[1]];1];$mentioned[1]]
+$onlyPerms[manageserver;admin;You can Use this command]
+$title[⚠️ - Warning]
+$description[
+ **Warned User**
+ <@$mentioned[1]>
+ **Warned by**
+ <@$authorID>
+ **Warn Reason**
+ $noMentionMessage]
+$footer[Warned to <@$mentioned[1]> by <@$authorID>]`
 });
