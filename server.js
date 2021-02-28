@@ -417,9 +417,6 @@ $addField[Warned User;<@$mentioned[1]> with ID: $mentioned[1]]
 $addField[Warned By;<@$authorID> with ID: $authorID]
 
 $addField[Reason;$noMentionMessage]
-
-$footerIcon[$userAvatar[$mentioned[1]]]
-
 $footer[Warned User: $username[$mentioned[1]]#$discriminator[$mentioned[1]] | Case #$sum[$getServerVar[case];1]]`
 });
 
@@ -470,7 +467,7 @@ $title[KICK]
 
 $color[#ff2052]
 
-$description[$username[$mentioned[<]] Is kicked by $username]
+$description[$username[$mentioned[1]] Is kicked by $username]
 
 $footer[Kicked by $username]
 
@@ -487,7 +484,7 @@ $title[BAN]
 
 $color[#ff2052]
 
-$description[<$mentioned[<]> Banned from the server!]
+$description[<$mentioned[1]> Banned from the server!]
 
 $footer[Banned by <$authorID>]
 
