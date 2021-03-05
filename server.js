@@ -9,7 +9,7 @@ bot.onMessage()
 bot.onLeave()
 bot.onJoined()
 
-var reader = fs.readdirSync(./commands).filter(file => file.endsWith(".js"))
+var reader = fs.readdirSync(`./commands`).filter(file => file.endsWith(".js"))
 for(const file of reader) {
 const command = require(`./commands/${file}`)
 bot.command({
